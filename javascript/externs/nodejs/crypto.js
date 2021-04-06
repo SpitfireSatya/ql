@@ -970,3 +970,65 @@ module.exports.Decipher = crypto.Decipher;
 
 module.exports.ECDH = crypto.ECDH;
 
+/**
+ * @param {(string|Buffer)} type
+ * @param {(Object)} options
+ * @param {(function(Error, Buffer): *)} callback
+ * @return {void}
+ */
+crypto.generateKeyPair = function(type, options, callback) { if(callback) callback(); };
+
+/**
+ * @param {(string|Buffer)} type
+ * @param {(Object)} options
+ * @return {Buffer}
+ */
+crypto.generateKeyPairSync = function(type, options) {};
+ 
+module.exports.generateKeyPair = crypto.generateKeyPair;
+ 
+module.exports.generateKeyPairSync = crypto.generateKeyPairSync;
+
+/**
+ * @param {(string|Buffer)} buf
+ * @param {(number)} offset
+ * @param {(number)} size
+ * @param {(function(Error, Buffer): *)} callback
+ * @return {void}
+ */
+crypto.randomFill = function(buf, offset, size, callback) { if(callback) callback(); };
+
+/**
+ * @param {(string|Buffer)} buf
+ * @param {(number)} offset
+ * @param {(number)} size
+ * @return {Buffer}
+ */
+crypto.randomFillSync = function(buf, offset, size) {};
+  
+module.exports.randomFill = crypto.randomFill;
+  
+module.exports.randomFillSync = crypto.randomFillSync;
+
+/**
+ * @param {(string|Buffer)} password
+ * @param {(string|Buffer)} salt
+ * @param {(number)} keylen
+ * @param {{Object}} options
+ * @param {(function(Error, Buffer): *)} callback
+ * @return {void}
+ */
+crypto.scrypt = function(password, salt, keylen, options, callback) { if(callback) callback(); };
+
+/**
+ * @param {(string|Buffer)} password
+ * @param {(string|Buffer)} salt
+ * @param {(number)} keylen
+ * @param {{Object}} options
+ * @return {Buffer}
+ */
+crypto.scryptSync = function(password, salt, keylen, options) {};
+  
+module.exports.scrypt = crypto.scrypt;
+  
+module.exports.scryptSync = crypto.scryptSync;

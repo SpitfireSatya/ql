@@ -1368,7 +1368,7 @@ fs.accessSync = function(path, mode) {};
  * @return {fs.ReadStream}
  */
 fs.createReadStream = function(path, options) {};
-fs.createReadStream.on = function(event, callback) { if(callback) callback(); }
+fs.createReadStream.on = function(event, callback) { callback(); }
 
 /**
  * @param {(string|Buffer)} path
@@ -1376,7 +1376,7 @@ fs.createReadStream.on = function(event, callback) { if(callback) callback(); }
  * @return {fs.WriteStream}
  */
 fs.createWriteStream = function(path, options) {};
-fs.createWriteStream.on = function(event, callback) { if(callback) callback(); }
+fs.createWriteStream.on = function(event, callback) { callback(); }
 
 /**
  * @param {number} fd
@@ -1699,3 +1699,22 @@ module.exports.W_OK = fs.W_OK;
 
 module.exports.X_OK = fs.X_OK;
 
+/**
+ * @param {string} src
+ * @param {string} dest
+ * @param {{encoding: string, mode: number, flag: string}=} options
+ * @return {void}
+ */
+fs.copyFileSync = function(src, dest, options) {};
+
+/**
+ * @param {string} src
+ * @param {*} dest
+ * @param {(function(NodeJS.ErrnoException): void)=} callback
+ * @return {void}
+ */
+fs.copyFile = function(src, dest, callback) { if(callback) callback(); };
+
+module.exports.copyFileSync = fs.copyFileSync;
+
+module.exports.copyFile = fs.copyFile;

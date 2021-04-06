@@ -411,6 +411,34 @@ zlib.Z_DEFLATED;
  */
 zlib.Z_NULL;
 
+/**
+ * @param {Buffer} buf
+ * @param {zlib.ZlibOptions=} options
+ * @return {*}
+ */
+zlib.brotliCompressSync = function(buf, options) {};
+
+/**
+* @param {Buffer} buf
+* @param {(function(Error, *): void)} callback
+* @return {void}
+*/
+zlib.brotliCompress = function(buf, callback) { if(callback) callback(); };
+
+/**
+ * @param {Buffer} buf
+ * @param {zlib.ZlibOptions=} options
+ * @return {*}
+ */
+zlib.brotliDecompressSync = function(buf, options) {};
+
+/**
+ * @param {Buffer} buf
+ * @param {(function(Error, *): void)} callback
+ * @return {void}
+ */
+zlib.brotliDecompress = function(buf, callback) { if(callback) callback(); };
+
 module.exports.ZlibOptions = zlib.ZlibOptions;
 
 module.exports.Gzip = zlib.Gzip;
@@ -531,3 +559,10 @@ module.exports.Z_DEFLATED = zlib.Z_DEFLATED;
 
 module.exports.Z_NULL = zlib.Z_NULL;
 
+module.exports.brotliCompress = zlib.brotliCompress;
+
+module.exports.brotliCompressSync = zlib.brotliCompressSync;
+
+module.exports.brotliDecompress = zlib.brotliDecompress;
+
+module.exports.brotliDecompressSync = zlib.brotliDecompressSync;
